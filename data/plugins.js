@@ -1,3 +1,5 @@
+const TELEGRAM_USERNAME = "d31zy";
+
 const PLUGINS = [
   {
     id: "economy-plus",
@@ -10,8 +12,8 @@ const PLUGINS = [
     version: "1.20 – 1.21",
     javaVersion: "Java 17+",
     features: ["Vault", "MySQL", "PlaceholderAPI", "REST API"],
-    github: "#",
-    download: "#",
+    paid: true,
+    github: "https://github.com/d31zy/EconomyPlus",
     accent: "#737373",
   },
   {
@@ -25,8 +27,8 @@ const PLUGINS = [
     version: "1.20 – 1.21",
     javaVersion: "Java 21+",
     features: ["Discord Webhook", "Configurable checks", "Async scanning"],
-    github: "#",
-    download: "#",
+    paid: true,
+    github: "https://github.com/d31zy/GuardShield",
     accent: "#6b6b6b",
   },
   {
@@ -40,8 +42,8 @@ const PLUGINS = [
     version: "1.19 – 1.21",
     javaVersion: "Java 17+",
     features: ["NBT Editor", "Custom recipes", "Hot reload"],
-    github: "#",
-    download: "#",
+    paid: false,
+    github: "https://github.com/d31zy/ItemCrafter",
     accent: "#808080",
   },
   {
@@ -55,8 +57,8 @@ const PLUGINS = [
     version: "1.18 – 1.21",
     javaVersion: "Java 17+",
     features: ["GUI selection", "LuckPerms", "World flags"],
-    github: "#",
-    download: "#",
+    paid: true,
+    github: "https://github.com/d31zy/RegionGuard",
     accent: "#5c5c5c",
   },
   {
@@ -70,8 +72,8 @@ const PLUGINS = [
     version: "1.20 – 1.21",
     javaVersion: "Java 17+",
     features: ["YAML config", "Quest chains", "Citizens NPC"],
-    github: "#",
-    download: "#",
+    paid: true,
+    github: "https://github.com/d31zy/QuestEngine",
     accent: "#949494",
   },
   {
@@ -85,8 +87,8 @@ const PLUGINS = [
     version: "1.19 – 1.21",
     javaVersion: "Java 17+",
     features: ["Live dashboard", "Spark hook", "Alerts"],
-    github: "#",
-    download: "#",
+    paid: false,
+    github: "https://github.com/d31zy/PerfMonitor",
     accent: "#525252",
   },
 ];
