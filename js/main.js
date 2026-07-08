@@ -19,9 +19,11 @@ function getPurchaseLink(productName) {
 }
 
 function getPriceBadge(plugin) {
-  return plugin.paid
-    ? `<span class="tag tag-paid">Платный</span>`
-    : `<span class="tag tag-free">Бесплатно</span>`;
+  if (plugin.paid && plugin.price) {
+    return `<span class="plugin-price">${plugin.price}</span>`;
+  }
+
+  return `<span class="tag tag-free">Бесплатно</span>`;
 }
 
 function renderModalActions(plugin) {
@@ -50,6 +52,8 @@ function createIcon(name) {
     close: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="w-5 h-5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>`,
     java: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true"><path d="M8.851 18.564s.792.489 2.399.489c2.247 0 3.838-.928 3.838-2.676 0-1.538-1.027-2.352-3.073-3.352C9.851 11.564 8.4 10.564 8.4 8.764c0-1.564 1.273-2.764 3.273-3.564l1.091 1.327c-1.273.655-1.818 1.382-1.818 2.291 0 1.109.746 1.691 2.291 2.473 2.182 1.091 3.273 2.291 3.273 4.036 0 2.473-2.036 4.073-5.236 4.073-2.182 0-3.636-.582-4.218-.873l1.091-1.327zM14.4 4.764c2.618.655 4.218 2.291 4.218 4.618 0 2.618-1.964 4.291-5.018 5.382l-.655-1.382c2.473-.873 3.782-1.964 3.782-3.491 0-1.236-.655-2.182-2.182-3.055l-.145-1.672z"/></svg>`,
     plugin: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.103-.897-2-2-2s-2 .897-2 2c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.586 3.55 1.088 5.312.166.527.433 1.015.794 1.433.361.418.808.756 1.314.994.506.238 1.062.372 1.628.394.566.022 1.13-.074 1.653-.282.523-.208 1.002-.516 1.408-.906a7.511 7.511 0 011.408.906c.523.208 1.087.304 1.653.282.566-.022 1.122-.156 1.628-.394.506-.238.953-.576 1.314-.994.361-.418.628-.906.794-1.433.502-1.762.902-3.699 1.088-5.312a48.39 48.39 0 01-4.163.3.64.64 0 01-.657-.643v0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 12v.01"/></svg>`,
+    vk: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5" aria-hidden="true"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.863 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.254-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.271.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.049.17.49-.085.744-.576.744z"/></svg>`,
+    funpay: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="w-5 h-5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.036l1.17 8.25c.066.467-.299.936-.764.936H5.148c-.465 0-.83-.469-.764-.936l1.17-8.25A1.125 1.125 0 016.678 9h10.644a1.125 1.125 0 011.064 1.464z"/></svg>`,
   };
   return icons[name] || "";
 }
@@ -83,6 +87,8 @@ function renderProfile() {
         <div class="flex items-center gap-2">
           <a href="${PROFILE.links.github}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">${createIcon("github")}</a>
           <a href="${PROFILE.links.telegram}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Telegram">${createIcon("telegram")}</a>
+          <a href="${PROFILE.links.vk}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="VK">${createIcon("vk")}</a>
+          <a href="${PROFILE.links.funpay}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="FunPay">${createIcon("funpay")}</a>
           <a href="${PROFILE.links.email}" class="social-link" aria-label="Email">${createIcon("email")}</a>
         </div>
       </div>
@@ -138,6 +144,7 @@ function renderPlugins() {
         </div>
       </div>
       <h3 class="font-display text-lg font-semibold text-neutral-50 mb-1">${plugin.name}</h3>
+      ${plugin.paid && plugin.price ? `<p class="plugin-price-inline mb-2">${plugin.price}</p>` : ""}
       <p class="text-sm text-neutral-400 mb-4 line-clamp-2">${plugin.tagline}</p>
       <div class="flex flex-wrap gap-2 mb-3">
         <span class="java-badge">${createIcon("java")} ${plugin.javaVersion}</span>
@@ -205,6 +212,11 @@ function openModal(pluginId) {
           <dt class="text-neutral-500 mb-1">Лицензия</dt>
           <dd class="text-neutral-200">${plugin.paid ? "Платный" : "Бесплатный"}</dd>
         </div>
+        ${plugin.paid && plugin.price ? `
+        <div>
+          <dt class="text-neutral-500 mb-1">Цена</dt>
+          <dd class="text-neutral-200 font-display font-medium">${plugin.price}</dd>
+        </div>` : ""}
       </dl>
       <div class="flex flex-wrap gap-2 mb-6">
         ${plugin.features.map((f) => `<span class="feature-chip">${f}</span>`).join("")}
