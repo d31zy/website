@@ -19,7 +19,6 @@ const PLUGINS = [
     github: "https://github.com/d31zy/d31zyDomainInfo",
     accent: "#4a4a4a",
   },
-
   {
     id: "economy-plus",
     name: "EconomyPlus",
@@ -82,22 +81,6 @@ const PLUGINS = [
     price: "900 ₽",
     github: "https://github.com/d31zy/RegionGuard",
     accent: "#5c5c5c",
-  },
-  {
-    id: "quest-engine",
-    name: "QuestEngine",
-    tagline: "Квестовая система с сценариями",
-    description:
-      "YAML-редактор квестов, цепочки заданий, награды и триггеры событий. Поддержка диалогов через Citizens.",
-    category: "gameplay",
-    platform: "Paper",
-    version: "1.20 – 1.21",
-    javaVersion: "Java 17+",
-    features: ["YAML config", "Quest chains", "Citizens NPC"],
-    paid: true,
-    price: "1 200 ₽",
-    github: "https://github.com/d31zy/QuestEngine",
-    accent: "#949494",
   },
   {
     id: "perf-monitor",
