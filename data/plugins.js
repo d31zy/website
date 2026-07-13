@@ -1,6 +1,25 @@
+const { version } = require("react");
+
 const TELEGRAM_USERNAME = "d31zy";
 
 const PLUGINS = [
+  {
+    id: "velocity-domaininfo",
+    name: "DomainInfo",
+    tagline: "Продвинутое логирование подключений по доменам",
+    description:
+      "Отслеживание входов и выходов игроков на разных доменах с мгновенными оповещениями. Поддерживает фильтрацию, статистику и интеграцию с внешними системами.",
+    category: "tools",
+    platform: "Velocity",
+    version: "3.4.0 – 3.5.0",
+    javaVersion: "Java 21+",
+    features: ["MySQL", "API", "Telegram", "Discord", "Alerts"],
+    paid: true,
+    price: "499 ₽",
+    github: "https://github.com/d31zy/d31zyDomainInfo",
+    accent: "#4a4a4a",
+  },
+
   {
     id: "economy-plus",
     name: "EconomyPlus",
