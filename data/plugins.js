@@ -103,7 +103,7 @@ const PROFILE = {
   bio: "Разрабатываю плагины для Minecraft-серверов на Paper и Spigot. Специализируюсь на экономике, защите, кастомном геймплее и инструментах для администраторов.",
   avatar: "assets/avatar.jpg",
   links: {
-    github: "https://github.com/farster",
+    github: "https://github.com/d31zy",
     telegram: "https://t.me/d31zy",
     vk: "https://vk.com/d.asspi4",
     funpay: "https://funpay.com/users/6582675/",
