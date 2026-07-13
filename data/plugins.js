@@ -2,6 +2,22 @@ const TELEGRAM_USERNAME = "d31zy";
 
 const PLUGINS = [
   {
+    id: "velocity-domaininfo",
+    name: "DomainInfo",
+    tagline: "Продвинутое логгирование игрока по доменам",
+    description: 
+      "Отличный помощник для отслеживания онлайна сервера по доменам. Подходит для администрирования над медийными игроками для лучшего прогресса на проекте.",
+    category: "tools",
+    platform: "Velocity",
+    version: "3.4.0 – 3.5.0",
+    javaVersion: "Java 21+",
+    features: ["MySQL", "API", "Telegram", "Discord", "Alerts"],
+    paid: true,
+    price: "499 ₽",
+    github: "https://github.com/d31zy/d31zyDomainInfo",
+    accent: "#737373",
+  },
+  {
     id: "economy-plus",
     name: "EconomyPlus",
     tagline: "Продвинутая экономика для серверов",
